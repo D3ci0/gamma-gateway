@@ -1,4 +1,4 @@
-package com.gamma.gateway.model.dto;
+package com.gamma.gateway.model.dto.email;
 
 import java.time.LocalDateTime;
 import java.util.List;

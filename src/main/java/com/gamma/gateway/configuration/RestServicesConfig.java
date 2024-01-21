@@ -9,6 +9,8 @@ import java.util.Map;
 @Component
 public class RestServicesConfig {
     private Map<String, String> email;
+    private Map<String, String> signature;
+    private Map<String, String> store;
 
     public RestServicesConfig() {
     }
@@ -19,5 +21,21 @@ public class RestServicesConfig {
 
     public void setEmail(Map<String, String> email) {
         this.email = email;
+    }
+
+    public Map<String, String> getSignature() {
+        return signature;
+    }
+
+    public void setSignature(Map<String, String> signature) {
+        this.signature = signature;
+    }
+
+    public Map<String, String> getStore() {
+        return store;
+    }
+
+    public void setStore(Map<String, String> store) {
+        this.store = store;
     }
 }
