@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gamma-api-gateway
+  name: gamma-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamma-api-gateway
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gamma-api-gateway
+    spec:
+      containers:
+      - image: decioc/gamma-api-gateway
+        name: gamma-api-gateway
+        resources:
+          requests:
+            cpu: 200m
+            memory: 600Mi
+          limits:
+            cpu: 200m
+            memory: 800Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gamma-api-gateway
+  labels:
+    app: gamma-api-gateway
+spec:
+  type: ClusterIP
+  ports:
+    - name: gamma-api-gateway
+      port: 8081
+      protocol: TCP
+  selector:
+    app: gamma-api-gateway
+status: {}
